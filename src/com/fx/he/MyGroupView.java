@@ -26,6 +26,8 @@ public class MyGroupView extends ViewGroup{
 		super(context, attrs);
 		mContext = context;
 		setUpView();
+		mContext = context;
+		setUpView();
 		Log.v(TAG, "MyGroupView(Context context, AttributeSet attrs)" + this.getHeight()+"|"+this.getWidth());
 		// TODO Auto-generated constructor stub
 	}
@@ -41,16 +43,16 @@ public class MyGroupView extends ViewGroup{
 	private void setUpView() {
 		// TODO Auto-generated method stub
 		
-		//Ìí¼ÓÒ»¸öTextView
+		//ï¿½ï¿½ï¿½Ò»ï¿½ï¿½TextView
 		TextView mTextView = new TextView(mContext);
 		mTextView.setText("helloworld");
 		this.addView(mTextView);
 		
-		//Ìí¼ÓÒ»¸öToggleButton
+		//ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ToggleButton
 		ToggleButton mToggleButton = new ToggleButton(mContext);
 		this.addView(mToggleButton);
 		
-		//Ìí¼ÓÒ»¸ö×Ô¶¨Òåview
+		//ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½view
 		RectangleView mRectangleView = new RectangleView(mContext);
 		this.addView(mRectangleView);
 				
@@ -73,18 +75,18 @@ public class MyGroupView extends ViewGroup{
 		// TODO Auto-generated method stub
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 		 int childCount = getChildCount() ;  
-		 Log.v(TAG, "the size of this ViewGroup is£º " + childCount) ;                            
+		 Log.v(TAG, "the size of this ViewGroup isï¿½ï¿½ " + childCount) ;                            
 		 Log.v(TAG, "------- onMeasure start") ;  
-		 //»ñÈ¡¸ÃViewGroupµÄÊµ¼Ê³¤ºÍ¿í  Éæ¼°µ½MeasureSpecÀàµÄÊ¹ÓÃ  
+		 //ï¿½ï¿½È¡ï¿½ï¿½ViewGroupï¿½ï¿½Êµï¿½Ê³ï¿½ï¿½Í¿ï¿½  ï¿½æ¼°ï¿½ï¿½MeasureSpecï¿½ï¿½ï¿½Ê¹ï¿½ï¿½  
 		 int specSize_Widht = MeasureSpec.getSize(widthMeasureSpec) ;  
 		 int specSize_Heigth = MeasureSpec.getSize(heightMeasureSpec) ;       
-		 Log.v(TAG, "------- specSize_Widht£º " + specSize_Widht+ " specSize_Heigth£º" + specSize_Heigth) ;  	          
-		 //ÉèÖÃ±¾ViewGroupµÄ¿í¸ß  
+		 Log.v(TAG, "------- specSize_Widhtï¿½ï¿½ " + specSize_Widht+ " specSize_Heigthï¿½ï¿½" + specSize_Heigth) ;  	          
+		 //ï¿½ï¿½ï¿½Ã±ï¿½ViewGroupï¿½Ä¿ï¿½ï¿½  
 		 setMeasuredDimension(specSize_Widht , specSize_Heigth) ;  
 		 for(int i=0 ;i<childCount ; i++){  
 			 View child = getChildAt(i) ; 
 			 this.measureChild(child, widthMeasureSpec, heightMeasureSpec) ;   
-			 //»òÕß¿ÉÒÔµ÷ÓÃViewGroup¸¸Àà·½·¨measure()»òÕßmeasureChildWithMargins()·½·¨  
+			 //ï¿½ï¿½ï¿½ß¿ï¿½ï¿½Ôµï¿½ï¿½ï¿½ViewGroupï¿½ï¿½ï¿½à·½ï¿½ï¿½measure()ï¿½ï¿½ï¿½ï¿½measureChildWithMargins()ï¿½ï¿½ï¿½ï¿½  
 		 }  
 
 	}
@@ -93,13 +95,13 @@ public class MyGroupView extends ViewGroup{
 	protected void onLayout(boolean changed, int l, int t, int r, int b) {
 		// TODO Auto-generated method stub
 		 int childCount = getChildCount() ;         
-		 int startLeft = 0 ;//ÉèÖÃÃ¿¸ö×ÓViewµÄÆðÊ¼ºá×ø±ê   
-		 int startTop = 10 ; //Ã¿¸ö×ÓView¾àÀë¸¸ÊÓÍ¼µÄÎ»ÖÃ £¬ ¼òµ¥ÉèÖÃÎª10px°É ¡£ ¿ÉÒÔÀí½âÎª android:margin=10px ;         
+		 int startLeft = 0 ;//ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½Viewï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½   
+		 int startTop = 10 ; //Ã¿ï¿½ï¿½ï¿½ï¿½Viewï¿½ï¿½ï¿½ë¸¸ï¿½ï¿½Í¼ï¿½ï¿½Î»ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª10pxï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª android:margin=10px ;         
 		 Log.v(TAG, "------- onLayout start ") ;  
 		 for(int i=0 ;i<childCount ; i++){  
-			 View child = getChildAt(i) ;   //»ñµÃÃ¿¸ö¶ÔÏóµÄÒýÓÃ  
+			 View child = getChildAt(i) ;   //ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
 			 child.layout(startLeft, startTop, startLeft+child.getMeasuredWidth(), startTop+child.getMeasuredHeight()) ;  
-			 startLeft =startLeft+child.getMeasuredWidth() + 10;  //Ð£×¼startLeftÖµ£¬ViewÖ®¼äµÄ¼ä¾àÉèÎª10px ;  
+			 startLeft =startLeft+child.getMeasuredWidth() + 10;  //Ð£×¼startLeftÖµï¿½ï¿½ViewÖ®ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Îª10px ;  
 			 Log.v(TAG, "------- onLayout startLeft " +startLeft) ;  
 		 }             
 
