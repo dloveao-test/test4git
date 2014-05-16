@@ -17,7 +17,7 @@ public class MyGroupView extends ViewGroup{
 	public MyGroupView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		mContext = context;
-		mContext = context;mContext = context;
+		mContext = context;mContext = context; //edit add 
 		Log.v(TAG, "MyGroupView(Context context, AttributeSet attrs, int defStyle)" + this.getHeight()+"|"+this.getWidth());
 		// TODO Auto-generated constructor stub
 	}
